@@ -1,3 +1,4 @@
+#Original JS from Francois Deschenes (https://github.com/fdeschenes/bootstrap-tag)
 class Tag
   constructor: ( element, options ) ->
     this.element = $(element)

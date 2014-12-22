@@ -1,6 +1,6 @@
 # Bootstrap::Tag
 
-TODO: Write a gem description
+bootstrap-tag is a ruby gem that implements a bootstrap tag component. It's based on the work of fdeschenes (https://github.com/fdeschenes/bootstrap-tag)
 
 ## Installation
 
