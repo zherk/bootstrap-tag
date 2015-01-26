@@ -40,9 +40,11 @@ class Tag
       )
       .on('keydown',
         ( event ) ->
+          #comma, enter or tab ends a tag
           if event.keyCode is 188 or event.keyCode is 13 or event.keyCode is 9
             if $.trim($(this).val()) and ( !that.element.siblings('.typeahead').length or that.element.siblings('.typeahead').is(':hidden') )
-              if ( event.keyCode isnt 9 ) event.preventDefault()
+              if event.keyCode isnt 9
+                event.preventDefault()
                 that.process()
             else if  event.keyCode is 188
               if ( !that.element.siblings('.typeahead').length || that.element.siblings('.typeahead').is(':hidden') )
@@ -51,7 +53,7 @@ class Tag
                 that.input.data('typeahead').select()
                 event.stopPropagation()
                 event.preventDefault()
-          else if ( !$.trim($(this).val()) && event.keyCode == 8 )
+          else if !$.trim($(this).val()) && event.keyCode is 8
             count = that.element.siblings('.tag').length
             if (count)
               tag = that.element.siblings('.tag:eq(' + (count - 1) + ')')
@@ -131,6 +133,7 @@ class Tag
       this.element.val(this.values.join(', '))
 
       this.element.trigger('removed', [value])
+      
   process: () ->
     values = $.grep($.map(this.input.val().split(','), $.trim),
       ( value ) ->

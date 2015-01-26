@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In app/assets/javascript/application.js:
+
+//= require typeahead_bundle
+//= require bootstrap-tag
+
+In app/assets/stylesheets/application.css.scss (or similiar):
+
+@import "bootstrap-tag";
+
+
 
 ## Contributing
 
